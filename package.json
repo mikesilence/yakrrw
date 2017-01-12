@@ -1,0 +1,28 @@
+{
+  "name": "topquest",
+  "version": "1.0.0",
+  "description": "Search top quest",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikesilence/topquest.git"
+  },
+  "keywords": [
+    "quest",
+    "escape",
+    "room"
+  ],
+  "author": "mike hromov <enj.z.slns@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikesilence/topquest/issues"
+  },
+  "homepage": "https://github.com/mikesilence/topquest#readme"
+}
