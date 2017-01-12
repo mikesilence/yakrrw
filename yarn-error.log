@@ -1,0 +1,56 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add koa --save
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  0.18.1
+
+Node version: 
+  6.9.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "topquest",
+    "version": "1.0.0",
+    "description": "Search top quest",
+    "main": "index.js",
+    "dependencies": {
+      "whatwg-fetch": "^2.0.1"
+    },
+    "devDependencies": {
+      "webpack": "^1.14.0"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/mikesilence/topquest.git"
+    },
+    "keywords": [
+      "quest",
+      "escape",
+      "room"
+    ],
+    "author": "mike hromov <enj.z.slns@gmail.com>",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/mikesilence/topquest/issues"
+    },
+    "homepage": "https://github.com/mikesilence/topquest#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/Users/m.hromov/Library/Caches/Yarn/npm-whatwg-fetch-2.0.1-078b9461bbe91cea73cbce8bb122a05f9e92b772'
+      at Error (native)
