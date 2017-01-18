@@ -5,7 +5,7 @@ let path = require('path');
 let webpack = require('webpack');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let AssetsPlugin = require('assets-webpack-plugin');
-let defaultPath = path.resolve(__dirname, './');
+let defaultPath = path.resolve(__dirname);
 // config
 module.exports = {
   enter: {
@@ -20,15 +20,15 @@ module.exports = {
 
   resolve: {
     moduleDirectories: ['web_modules', 'node_modules'],
-    root: defaultPath + (process.env.NODE_VER === 'desktop' ? '/desktop' : '/mobile'),
-    alias: {
-      _global: defaultPath + '/global',
-      _vendors: defaultPath + '/vendors',
-      _fonts: 'fonts',
-      _images: 'images',
-      _sass: 'sass',
-      _js: 'js'
-    },
+    root: defaultPath,
+    // alias: {
+    //   _global: defaultPath + '/global',
+    //   _vendors: defaultPath + '/vendors',
+    //   _fonts: 'fonts',
+    //   _images: 'images',
+    //   _sass: 'sass',
+    //   _js: 'js'
+    // },
   },
 
   module: {
