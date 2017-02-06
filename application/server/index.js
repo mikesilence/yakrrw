@@ -1,9 +1,9 @@
-import Koa from 'koa';
+// import Koa from 'koa';
 
-var app = Koa();
+// var app = Koa();
 
-app.use(function *(){
-  this.body = 'Hello World';
-});
+// app.use(function *(){
+//   this.body = 'Hello World';
+// });
 
-app.listen(3000);
+// app.listen(3000);
