@@ -60,12 +60,5 @@ export default {
     new webpack.NoEmitOnErrorsPlugin()
   ],
 
-  watch: true,
-
-  node: {
-    net: 'empty',
-    tls: 'empty',
-    dns: 'empty',
-    fs: 'empty'
-  }
+  watch: true
 };
