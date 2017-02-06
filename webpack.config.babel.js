@@ -7,6 +7,7 @@ import webpack from 'webpack';
 // import AssetsPlugin from 'assets-webpack-plugin';
 
 const defaultPath = path.resolve(__dirname, 'application');
+const localPath = 'http://localhost:8050/static/';
 
 // config
 export default {
@@ -15,8 +16,8 @@ export default {
   },
 
   output: {
-    path: defaultPath + '/static',
-    publicPath: '/static/',
+    path: defaultPath + 'static/assets',
+    publicPath: localPath,
     filename: '[name]/[name].js'
   },
 
@@ -58,6 +59,8 @@ export default {
   plugins: [
     new webpack.NoEmitOnErrorsPlugin()
   ],
+
+  watch: true,
 
   node: {
     net: 'empty',
