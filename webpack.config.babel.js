@@ -2,63 +2,21 @@
 
 // includes
 import path from 'path';
-import webpack from 'webpack';
-// import ExtractTextPlugin from 'extract-text-webpack-plugin';
-// import AssetsPlugin from 'assets-webpack-plugin';
+import devUrls from './config/webpack-urls';
+import statics from './config/webpack-static';
+import node from './config/webpack-node';
 
-const defaultPath = path.resolve(__dirname, 'application');
-const localPath = 'http://localhost:8050/static/';
+// const version = process.env.NODE_VER;
+const environment = process.env.NODE_ENV;
+const appPath = path.resolve(__dirname, 'application');
+const buildPath = path.resolve(__dirname, 'build');
+const localPath = devUrls(environment);
+const setting = [statics, node];
 
 // config
-export default {
-  entry: {
-    assets: defaultPath + '/assets'
-  },
-
-  output: {
-    path: defaultPath + 'static/assets',
-    publicPath: localPath,
-    filename: '[name]/[name].js'
-  },
-
-  resolve: {
-    modules: [
-      defaultPath,
-      'node_modules'
-    ],
-    alias: {
-      _fonts: 'fonts',
-      _images: 'images',
-      _sass: 'sass',
-      _js: 'js'
-    }
-  },
-
-  module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /(node_modules)/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'react'],
-        // plugins: ['transfrom-runtime'],
-        ignore: []
-      }
-    }, {
-      test: /\.(eot|otf|woff|woff2|ttf)$/,
-      loader: 'url-loader?name=fonts/[hash].[ext]&limit=10000',
-    }, {
-      test: /\.(png|jpg|gif|svg)$/,
-      loader: 'url-loader?name=images/[hash].[ext]&limit=10000',
-    }, {
-      test: /\.styl|.css$/,
-      loader: 'css!autoprefixer-loader?browsers=last 5 version!sass',
-    }]
-  },
-
-  plugins: [
-    new webpack.NoEmitOnErrorsPlugin()
-  ],
-
-  watch: true
-};
+export default function() {
+  return setting.map(config => Object.assign(
+    config(appPath, buildPath, localPath),
+    { watch: true })
+  );
+}

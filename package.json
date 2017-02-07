@@ -1,7 +1,7 @@
 {
-  "name": "topquest",
+  "name": "yakrrw",
   "version": "1.0.0",
-  "description": "Search top quest",
+  "description": "yet another koa+redux+react+webpack",
   "main": "index.js",
   "dependencies": {
     "babel-cli": "^6.22.2",
@@ -22,7 +22,6 @@
     "koa-redux": "^0.2.1",
     "koa-router": "^7.1.0",
     "koa-webpack": "^0.2.1",
-    "mongoose": "^4.7.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
@@ -45,29 +44,31 @@
     "nodemon": "^1.11.0",
     "postcss-loader": "^1.2.2",
     "sass-loader": "^4.1.1",
-    "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=develop NODE_VER=desktop webpack --progress --sort-assets-by --color",
-    "front-server": "babel-node front-server.js",
-    "back-server": "nodemon --exec babel-node application/server/"
+    "clear": "rm -rf build/*",
+    "static": "NODE_ENV=develop webpack --progress --sort-assets-by --color",
+    "server:front": "babel-node ./config/webpack-dev-server.js",
+    "server:back": "nodemon --exec babel-node build/server/server.js",
+    "dev:f": "NODE_ENV=develop yarn run server:front",
+    "dev:b": "NODE_ENV=develop yarn run server:back"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mikesilence/topquest.git"
+    "url": "git+https://github.com/mikesilence/yakrrw.git"
   },
   "keywords": [
-    "quest",
-    "escape",
-    "room"
+    "koa",
+    "react",
+    "redux"
   ],
   "author": "mike hromov <enj.z.slns@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mikesilence/topquest/issues"
+    "url": "https://github.com/mikesilence/yakrrw/issues"
   },
-  "homepage": "https://github.com/mikesilence/topquest#readme"
+  "homepage": "https://github.com/mikesilence/yakrrw#readme"
 }
