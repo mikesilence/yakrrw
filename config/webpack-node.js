@@ -12,7 +12,7 @@ export default function(appPath, buildPath, localPath) {
 
     output: {
       path: buildPath + '/server',
-      publicPath: '',
+      publicPath: '/server/',
       filename: '[name].js'
     },
 
@@ -26,11 +26,28 @@ export default function(appPath, buildPath, localPath) {
           // plugins: ['transfrom-runtime'],
           ignore: []
         }
-      }]
+      }],
+
+      // Remove Critical dependencies warning
+      // require
+      // unknownContextRegExp: /$^/,
+      // unknownContextCritical: false,
+
+      // // require(expr)
+      // exprContextRegExp: /$^/,
+      // exprContextCritical: false,
+
+      // // require("prefix" + expr + "surfix")
+      // wrappedContextRegExp: /$^/,
+      // wrappedContextCritical: false
     },
 
     plugins: [
-      new webpack.NoEmitOnErrorsPlugin()
+      new webpack.NoEmitOnErrorsPlugin(),
+      new webpack.ProvidePlugin({
+        window: {},
+        document: {}
+      })
     ],
 
     node: {
