@@ -7,21 +7,21 @@ import * as updateCount from '../actions';
 import Number from '../components/Number';
 
 const TYPES = {
-  count: PropTypes.number,
-  updateCount: PropTypes.object
+  actions: PropTypes.object,
+  count: PropTypes.number
 };
 
 class Application extends Component {
   handler() {
-    this.props.updateCount.default(this.props.count + 1);
+    this.props.actions.updateCount(this.props.count + 1);
   }
 
   render() {
-    console.log(this.props);
     const { count } = this.props;
+    const style = { display: 'inline-block', border: '1px solid green'};
     return (
       <div>
-        <h1 onClick={this.handler.bind(this)}>Кликни и измени цифру
+        <h1 onClick={this.handler.bind(this)} style={style}>Кликни и измени цифру
           <Number count={count}/>
         </h1>
       </div>
@@ -37,7 +37,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateCount: bindActionCreators(updateCount, dispatch)
+    actions: bindActionCreators(updateCount, dispatch)
   };
 }
 
