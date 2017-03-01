@@ -17385,7 +17385,7 @@ app.use(function _callee(ctx) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          ctx.body = '<body><h1>js - forever</h1><script type="application/javascript" src="' + assetsPath + '/application.js"></script></body>';
+          ctx.body = '<body>\n    <h3 style="color:grey">[js]::[react&redux]</h3>\n    <div class="fake_body"></div>\n    <script type="application/javascript" src="' + assetsPath + '/application.js"></script>\n    </body>';
 
         case 1:
         case 'end':
