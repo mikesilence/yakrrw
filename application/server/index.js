@@ -1,7 +1,6 @@
 import Koa from 'koa';
 
 const app = new Koa();
-const assetsPath = 'http://localhost:8050/build';
 
 app.use(async (ctx) => {
   ctx.body = `<body>
